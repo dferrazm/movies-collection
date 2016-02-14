@@ -7,7 +7,7 @@ class MoviesController < AuthenticatedController
     @movie = user_collection.add(movie_params)
 
     if @movie.persisted?
-      redirect_to root_path, notice: I18n.t('movies.added_successfully') 
+      redirect_to root_path, notice: I18n.t('movies.added_successfully')
     else
       render :new
     end
@@ -24,7 +24,6 @@ class MoviesController < AuthenticatedController
     params
       .require(:movie)
       .permit(:name, :genre, :year, :director, :description)
-      .merge(user: current_user)
   end
 
   def user_collection
