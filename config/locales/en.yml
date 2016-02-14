@@ -1,5 +1,5 @@
 en:
   layouts:
     application:
-      sign_out: "Sign Out"
+      sign_out: "Sign out"
       confirm_sign_out: "Are you sure that you want to sign out?"
