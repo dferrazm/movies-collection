@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MoviesCollection</title>
+  <title>Movies Collection</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <header>
+    <h1>Movies Collection</h1>
+
+    <% if user_signed_in? %>
+    <ul>
+      <li><%= current_user.email %></li>
+      <li>
+        <%= link_to t('.sign_out'), destroy_user_session_path,
+            data: { method: :delete, confirm: t('.confirm_sign_out') } %>
+      </li>
+    </ul>
+    <% end %>
+  </header>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
