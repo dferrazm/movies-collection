@@ -1,5 +1,3 @@
-class HomeController < ApplicationController
-  before_action :authenticate_user!
-
+class HomeController < AuthenticatedController
   def index;end
 end

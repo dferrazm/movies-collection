@@ -3,3 +3,17 @@ en:
     application:
       sign_out: "Sign out"
       confirm_sign_out: "Are you sure that you want to sign out?"
+
+  movies:
+    added_successfully: "The movie was added to your collection."
+    new:
+      title: "New Movie"
+    form:
+      add_button: 'Add to my collection'
+
+  attributes:
+    name: "Name"
+    genre: "Genre"
+    year: "Year"
+    director: "Director"
+    description: "Description"
