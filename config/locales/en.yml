@@ -4,12 +4,19 @@ en:
       sign_out: "Sign out"
       confirm_sign_out: "Are you sure that you want to sign out?"
 
+  home:
+    index:
+      add_movie: "Add movie"
+
   movies:
-    added_successfully: "The movie was added to your collection."
-    new:
-      title: "New Movie"
+    edit:
+      title: "Movie Details"
     form:
-      add_button: 'Add to my collection'
+      done: 'Done'
+
+  movies_collection:
+    movie_added: "The movie was added to your collection"
+    movie_not_added: "Failed to add the movie. Did you provide a name?"
 
   attributes:
     name: "Name"
