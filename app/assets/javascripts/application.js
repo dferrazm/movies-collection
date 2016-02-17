@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require coffee_controllers/all
 //= require_tree .

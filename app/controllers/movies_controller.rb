@@ -1,4 +1,8 @@
 class MoviesController < AuthenticatedController
+  def recents
+    render :movies, locals: { movies: movies_collection.recents }, layout: false
+  end
+
   def create
     movie = movies_collection.add(movie_params)
 
@@ -19,6 +23,11 @@ class MoviesController < AuthenticatedController
     else
       render_edit(target_movie)
     end
+  end
+
+  def destroy
+    target_movie.destroy
+    render :remove, locals: { movie: target_movie }
   end
 
   private

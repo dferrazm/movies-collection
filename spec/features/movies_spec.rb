@@ -1,16 +1,16 @@
 require 'rails_helper'
 
 feature 'Movies creation' do
-  include FeaturesHelper
-
   let(:user) { create :user }
 
-  before { sign_in(user) }
+  before { login_as(user, scope: :user) }
 
-  scenario 'creating a new movie' do
+  scenario 'creating a new movie', js: true do
     expect(user.movies.count).to eq 0
 
     visit '/'
+
+    expect(page).to_not have_content 'Platoon'
 
     fill_in 'movie_name', with: 'Platoon'
     click_button 'Add movie'
@@ -22,6 +22,8 @@ feature 'Movies creation' do
     click_button 'Done'
 
     expect(current_path).to eq '/'
+    expect(page).to have_content 'Platoon'
+
     expect(user.movies.count).to eq 1
   end
 end

@@ -4,6 +4,10 @@ module Users
       @user_movies = user_movies
     end
 
+    def recents
+      user_movies.order(id: :desc)
+    end
+
     def add(movie_params)
       user_movies.create(movie_params)
     end
