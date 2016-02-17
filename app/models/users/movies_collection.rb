@@ -1,16 +1,24 @@
 module Users
   class MoviesCollection
-    def initialize(user)
-      @user = user
+    def initialize(user_movies)
+      @user_movies = user_movies
     end
 
     def add(movie_params)
-      movie_params.merge!(user: user)
-      Movie.create(movie_params)
+      user_movies.create(movie_params)
+    end
+
+    def find(id)
+      user_movies.find(id)
+    end
+
+    def update_movie(id, movie_params)
+      movie = find(id)
+      movie.update_attributes(movie_params) and movie
     end
 
     private
 
-    attr_reader :user
+    attr_reader :user_movies
   end
 end
