@@ -2,8 +2,8 @@
   constructor: (@gallery) ->
 
   load: ->
-    $.get '/movies/recents', (movies) =>
-      @renderMovies(movies)
+    moviesUrl = @gallery.data('url')
+    $.get moviesUrl, (movies) => @renderMovies(movies)
 
   renderMovies: (movies) ->
     @gallery.append(movies)

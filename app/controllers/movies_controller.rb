@@ -1,4 +1,6 @@
 class MoviesController < AuthenticatedController
+  include MoviesHandling
+
   def recents
     render :movies, locals: { movies: movies_collection.recents }, layout: false
   end
@@ -31,14 +33,6 @@ class MoviesController < AuthenticatedController
   end
 
   private
-
-  def target_movie
-    @target_movie ||= movies_collection.find(params[:id])
-  end
-
-  def movies_collection
-    @movies_collection ||= Users::MoviesCollection.new(current_user.movies)
-  end
 
   def movie_params
     params

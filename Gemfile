@@ -12,6 +12,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'coffee_controllers-rails'
+gem 'jquery-fileupload-rails'
+gem 'handlebars_assets'
+
+# Image manipulation
+gem 'rmagick', require: false
+gem 'carrierwave'
 
 group :development, :test do
   gem 'pry-byebug'

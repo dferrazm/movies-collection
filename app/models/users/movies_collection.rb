@@ -5,7 +5,7 @@ module Users
     end
 
     def recents
-      user_movies.order(id: :desc)
+      user_movies.includes(:pictures).order(id: :desc)
     end
 
     def add(movie_params)
