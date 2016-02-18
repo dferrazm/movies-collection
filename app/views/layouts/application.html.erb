@@ -1,32 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Movies Collection</title>
+  <title>My Movies Collection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body data-controller="<%= controller.controller_path %>"
       data-action="<%= controller.action_name %>">
 
-  <header>
-    <h1>Movies Collection</h1>
+  <%= render 'shared/header' %>
+  <%= render 'shared/alerts' %>  
 
-    <% if user_signed_in? %>
-    <ul>
-      <li><%= current_user.email %></li>
-      <li>
-        <%= link_to t('.sign_out'), destroy_user_session_path,
-            data: { method: :delete, confirm: t('.confirm_sign_out') } %>
-      </li>
-    </ul>
-    <% end %>
-  </header>
+  <div class="container">
+    <%= yield %>
+  </div>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-  <%= yield %>
-
+  <%= javascript_include_tag 'application' %>
 </body>
 </html>

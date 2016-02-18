@@ -13,7 +13,7 @@ feature 'Movies creation' do
     expect(page).to_not have_content 'Platoon'
 
     fill_in 'movie_name', with: 'Platoon'
-    click_button 'Add movie'
+    click_button 'add_movie'
 
     fill_in 'Genre', with: 'Action'
     fill_in 'Year', with: 1986
@@ -34,7 +34,7 @@ feature 'Movies creation' do
 
     within '#movies-gallery' do
       expect(page).to have_content 'Platoon'
-      click_link 'Remove'
+      page.find('.btn-remove').click
       expect(page).to_not have_content 'Platoon'
     end
 
