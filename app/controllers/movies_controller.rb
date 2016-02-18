@@ -2,7 +2,7 @@ class MoviesController < AuthenticatedController
   include MoviesHandling
 
   def recents
-    render :movies, locals: { movies: movies_collection.recents }, layout: false
+    render :movies, locals: { movies: movies_collection.recents }
   end
 
   def create
@@ -29,7 +29,7 @@ class MoviesController < AuthenticatedController
 
   def destroy
     target_movie.destroy
-    render :remove, locals: { movie: target_movie }
+    render nothing: true
   end
 
   private
