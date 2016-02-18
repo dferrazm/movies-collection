@@ -1,0 +1,5 @@
+<div id="movie-pictures" data-url="<%= movie_pictures_path(movie) %>">
+  <%= form_for(:picture, url: movie_pictures_path(movie), html: { id: 'file-input' }) do |f| %>
+    <%= f.file_field :image, multiple: true, name: 'picture[image]' %>
+  <% end %>
+</div>

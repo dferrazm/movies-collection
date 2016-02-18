@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-fileupload/basic
+//= require handlebars.runtime
 //= require coffee_controllers/all
+//= require_tree ./templates
 //= require_tree .

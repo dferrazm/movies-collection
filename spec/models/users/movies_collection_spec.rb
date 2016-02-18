@@ -3,7 +3,17 @@ require 'rails_helper'
 describe Users::MoviesCollection do
   let(:user) { build_stubbed :user }
   let(:matrix) { create :movie, user: user, name: 'Matrix' }
+  let(:platoon) { create :movie, user: user, name: 'Platoon' }
   let(:collection) { described_class.new(user.movies) }
+
+  describe '#recents' do
+    subject(:recents) { collection.recents }
+    before { matrix; platoon }
+
+    it 'returns the movies order by id desc' do
+      expect(recents).to match [platoon, matrix]
+    end
+  end
 
   describe '#add' do
     it 'adds a new movie to the users collection' do

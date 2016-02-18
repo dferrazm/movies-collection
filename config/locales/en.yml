@@ -12,7 +12,8 @@ en:
     edit:
       title: "Movie Details"
     form:
-      done: 'Done'
+      done: "Done"
+
 
   movies_collection:
     movie_added: "The movie was added to your collection"
