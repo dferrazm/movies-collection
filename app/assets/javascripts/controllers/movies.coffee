@@ -1,4 +1,4 @@
 @MoviesController = class MoviesController
   edit: ->
-    moviePictures = new MoviePictures($ '#movie-pictures')
-    moviePictures.load()
+    picturesInput = new PicturesInputGallery($ '#movie-pictures')
+    picturesInput.load()

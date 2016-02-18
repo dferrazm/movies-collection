@@ -26,4 +26,18 @@ feature 'Movies creation' do
 
     expect(user.movies.count).to eq 1
   end
+
+  scenario 'removing a movie', js: true do
+    create :movie, name: 'Platoon', user: user
+
+    visit '/'
+
+    within '#movies-gallery' do
+      expect(page).to have_content 'Platoon'
+      click_link 'Remove'
+      expect(page).to_not have_content 'Platoon'
+    end
+
+    expect(user.movies.count).to eq 0
+  end
 end
