@@ -13,6 +13,14 @@ describe Users::MoviesCollection do
     it 'returns the movies order by id desc' do
       expect(recents).to match [platoon, matrix]
     end
+
+    context 'by filtering by limit and offset' do
+      subject(:recents) { collection.recents count: 1, offset: 1 }
+
+      it 'returns the corresponding movies' do
+        expect(recents).to match [matrix]
+      end
+    end
   end
 
   describe '#add' do

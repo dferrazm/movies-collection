@@ -1,9 +1,10 @@
-@MoviesGallery = class MoviesGallery extends ItemsGallery
+@MoviesGallery = class MoviesGallery extends PaginatedItemsGallery
   constructor: (container, addMovieField) ->
     super container, 'gallery/movie'
     @addMovieField = addMovieField
 
   afterItemsRendered: ->
+    super
     if @isGalleryEmpty()
       @renderEmptyPlaceholder()
       @focusAddMovieField()
