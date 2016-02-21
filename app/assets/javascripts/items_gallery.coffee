@@ -2,10 +2,12 @@
   constructor: (@galleryContainer, @itemTemplate) ->
 
   load: ->
-    itemsUrl = @galleryContainer.data('url')
-    $.get itemsUrl, (items) =>
+    $.get @itemsUrl(), (items) =>
       @renderItem(item) for item in items
-      @afterItemsRendered()
+      @afterItemsRendered(items)
+
+  itemsUrl: ->
+    @galleryContainer.data('url')
 
   renderItem: (item) ->
     $item = $(JST[@itemTemplate] item)

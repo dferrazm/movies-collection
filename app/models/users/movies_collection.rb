@@ -4,8 +4,8 @@ module Users
       @user_movies = user_movies
     end
 
-    def recents
-      user_movies.includes(:pictures).order(id: :desc)
+    def recents(count: DEFAULT_RECENTS_COUNT, offset: 0)
+      user_movies.includes(:pictures).limit(count).offset(offset).order(id: :desc)
     end
 
     def add(movie_params)
@@ -22,6 +22,8 @@ module Users
     end
 
     private
+
+    DEFAULT_RECENTS_COUNT = 20
 
     attr_reader :user_movies
   end

@@ -2,7 +2,8 @@ class MoviesController < AuthenticatedController
   include MoviesHandling
 
   def recents
-    render :movies, locals: { movies: movies_collection.recents }
+    recent_movies = movies_collection.recents(count: params[:count], offset: params[:offset])
+    render :movies, locals: { movies: recent_movies }
   end
 
   def create

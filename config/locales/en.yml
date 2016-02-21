@@ -10,17 +10,18 @@ en:
     form:
       done: "Done"
     add_movie:
-      field_placeholder: "Add a new movie name"
+      field_placeholder: "Add a new movie title"
     pictures:
       input: "select or drag pictures to the movie"
     gallery:
       empty_message: "You don't have any movies yet"
+      load_more: "Load more"
 
   movies_collection:
-    movie_not_added: "Failed to add the movie. Did you provide a name?"
+    movie_not_added: "Failed to add the movie. Did you provide a title?"
 
   attributes:
-    name: "Name"
+    name: "Title"
     genre: "Genre"
     year: "Year"
     director: "Director"

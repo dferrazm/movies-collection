@@ -79,6 +79,7 @@ textarea {
   background: transparent;
   border: 1px solid $color_green_1;
   color: $color_green_1;
+  outline: none !important;
 
   &:hover {
     background: transparent;
@@ -296,23 +297,32 @@ input, textarea, a {
   margin: 10px 0 0 10px;
 }
 .add-movie-form {
-  form {
-    float: right;
-  }
-
 	.field, .btn {
 		display: inline-block;;
 		vertical-align: top;
 	}
 
-	input[type="text"] {
+  .add_movie-field-focused {
+    opacity: 1;
+    width: 350px;
+  }
+
+	.add-movie-field {
 		width: 250px;
     margin-right: 10px;
 
-		&:hover, &:focus {
-			width: 350px;
+		&:focus {
+      @extend .add_movie-field-focused;
 		}
 	}
+
+  form {
+    float: right;
+
+    &:hover .add-movie-field {
+      @extend .add_movie-field-focused;
+		}
+  }
 }
 .edit-movie-form {
   .actions {
@@ -396,4 +406,9 @@ input, textarea, a {
     font-style: normal;
     padding: 50px 0;
   }
+}
+
+.btn-load-more {
+  margin: 30px auto;
+  width: 100%;
 }

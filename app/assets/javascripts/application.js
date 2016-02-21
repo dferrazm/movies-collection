@@ -16,4 +16,6 @@
 //= require handlebars.runtime
 //= require coffee_controllers/all
 //= require_tree ./templates
+//= require items_gallery
+//= require paginated_items_gallery
 //= require_tree .
