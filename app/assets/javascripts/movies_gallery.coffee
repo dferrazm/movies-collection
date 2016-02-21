@@ -1,11 +1,12 @@
 @MoviesGallery = class MoviesGallery extends ItemsGallery
-  constructor: (container) ->
+  constructor: (container, addMovieField) ->
     super container, 'gallery/movie'
+    @addMovieField = addMovieField
 
   afterItemsRendered: ->
     if @isGalleryEmpty()
       @renderEmptyPlaceholder()
-      @focusOnAddMovieField()
+      @focusAddMovieField()
 
   renderEmptyPlaceholder: ->
     @galleryContainer.append(JST['gallery/empty_message']())
@@ -13,5 +14,5 @@
   isGalleryEmpty: ->
     @galleryContainer.html().trim() == ""
 
-  focusOnAddMovieField: ->
-    $('#movie_name').focus()
+  focusAddMovieField: ->
+    @addMovieField.focus()

@@ -1,7 +1,7 @@
 <div class="add-movie-form clearfix">
   <%= form_for(Movie.new) do |f| %>
     <div class="field">
-      <%= f.text_field :name, placeholder: t('.field_placeholder'), required: true %>
+      <%= f.text_field :name, placeholder: t('.field_placeholder'), required: true, class: 'add-movie-field' %>
     </div>
 
     <button class="btn btn-success btn-circle" type="submit" name="submit" id="add_movie">
