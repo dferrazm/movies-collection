@@ -11,7 +11,7 @@ class MoviesController < AuthenticatedController
     if movie.persisted?
       redirect_to edit_movie_path(movie)
     else
-      redirect_to root_path, notice: I18n.t('movies_collection.movie_not_added')
+      redirect_to root_path, alert: I18n.t('movies_collection.movie_not_added')
     end
   end
 
@@ -21,7 +21,7 @@ class MoviesController < AuthenticatedController
 
   def update
     if target_movie.update_attributes(movie_params)
-      redirect_to root_path, notice: I18n.t('movies_collection.movie_added')
+      redirect_to root_path
     else
       render_edit(target_movie)
     end

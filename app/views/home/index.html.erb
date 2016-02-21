@@ -1,13 +1,2 @@
-<section>
-  <h1>Welcome to your Movies Collection</h1>
-
-  <%= form_for(Movie.new) do |f| %>
-    <div class="field">
-      <%= f.text_field :name %>
-    </div>
-
-    <%= f.submit t('.add_movie') %>
-  <% end %>
-</section>
-
+<%= render 'movies/add_movie' %>
 <%= render 'movies/gallery' %>

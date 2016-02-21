@@ -1,0 +1,21 @@
+<li class="movie item span3">
+  <div class="thumbnail">
+    {{#if pictureUrl}}
+      <img src="{{pictureUrl}}">
+    {{else}}
+      <img src="<%= asset_path 'placeholder.jpg' %>" class="placeholder">
+    {{/if}}
+
+    <span class="caption">
+      <h4 class="thumbnail-title">{{name}} {{#if year}}({{year}}){{/if}}</h4>
+    </span>
+    <div class="buttons">
+      <a href="/movies/{{id}}/edit" class="btn-round">
+        <i class="fa fa-eye"></i>
+      </a>
+      <a href="/movies/{{id}}" data-method="delete" data-remote="true" class="btn-remove btn-round">
+        <i class="fa fa-trash"></i>
+      </a>
+    </div>
+  </div>
+</li>

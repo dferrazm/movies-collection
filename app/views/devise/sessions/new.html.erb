@@ -1,0 +1,17 @@
+<h2><%= t('devise.log_in') %></h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'span4 margin-less' }) do |f| %>
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, placeholder: t('attributes.email'), class: 'full-width' %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "off", placeholder: t('attributes.password'), class: 'full-width' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit t('devise.log_in'), class: 'btn btn-success btn-big full-width' %>
+  </div>
+
+  <%= render "devise/shared/links" %>
+<% end %>

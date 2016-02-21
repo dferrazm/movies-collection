@@ -68,6 +68,10 @@ RSpec.configure do |config|
   end
 end
 
+Capybara::Webkit.configure do |config|
+  config.block_unknown_urls
+end
+
 class ActiveRecord::Base
   mattr_accessor :shared_connection
   @@shared_connection = nil

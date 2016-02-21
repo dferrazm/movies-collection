@@ -1,0 +1,20 @@
+<div class="masthead clearfix">
+  <div class="container">
+		<div class="logo pull-left">
+      <a href="/" class="brand">My Movies Collection</a>
+    </div>
+
+      <% if user_signed_in? %>
+        <div class="socials pull-right">
+          <div class="online-user">
+            <%= current_user.email %>
+          </div>
+
+          <%= link_to destroy_user_session_path, title: t('.sign_out'),
+              data: { method: :delete, confirm: t('.confirm_sign_out') } do %>
+              <i class="fa fa-power-off"></i>
+          <% end %>
+        </div>
+      <% end %>
+	</div>
+</div>

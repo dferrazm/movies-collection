@@ -9,17 +9,16 @@ feature 'User sign in' do
 
     click_link 'Sign up'
 
-    fill_in 'Email', with: 'john@doe.com'
-    fill_in 'Password', with: 'change123'
+    fill_in 'user_email', with: 'john@doe.com'
+    fill_in 'user_password', with: 'change123'
     click_button 'Sign up'
     expect(page).to have_content "Password confirmation doesn't match"
 
-    fill_in 'Password', with: 'change123'
-    fill_in 'Password confirmation', with: 'change123'
+    fill_in 'user_password', with: 'change123'
+    fill_in 'user_password_confirmation', with: 'change123'
     click_button 'Sign up'
 
     expect(current_path).to eq '/'
-    expect(page).to have_content 'You have signed up successfully'
 
     click_link 'Sign out'
     expect(current_path).to eq '/users/sign_in'
